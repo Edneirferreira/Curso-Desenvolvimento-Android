@@ -5,10 +5,9 @@ import android.util.Log;
 import professor.marcomaddo.appminhaideiadb.api.AppUtil;
 import professor.marcomaddo.appminhaideiadb.controller.ICrud;
 
-// Pojo
-public class Cliente {
+public class Cliente  implements ICrud {
 
-    private int id; // Chave Primária no Banco de Dados
+    private static final String TAG = "Crud";
     private String nome;
     private String email;
 
@@ -28,12 +27,24 @@ public class Cliente {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public void incluir() {
+        Log.i(AppUtil.TAG, "incluir: Nome Cliente: "+getNome());
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public void alterar() {
+        Log.i(AppUtil.TAG, "alterar: ");
+    }
+
+    @Override
+    public void deletar() {
+        Log.i(AppUtil.TAG, "deletar: ");
+    }
+
+    @Override
+    public void listar(){
+        Log.i(AppUtil.TAG, "listar: Cliente");
     }
 
 }
